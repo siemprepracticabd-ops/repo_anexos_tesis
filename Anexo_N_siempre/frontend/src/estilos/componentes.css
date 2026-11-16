@@ -1,0 +1,356 @@
+/* componentes: botones, formularios, tablas, mensajes y detalles */
+
+/* botones */
+
+button {
+  min-height: var(--alto-control);
+  padding: 0 var(--e4);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--texto);
+  background: var(--fondo);
+  border: 1px solid var(--borde-fuerte);
+  border-radius: var(--radio);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+button:hover:not(:disabled) {
+  background: var(--superficie);
+  border-color: var(--texto-suave);
+}
+
+/* la accion principal de cada formulario */
+button[type='submit'],
+button.principal {
+  color: var(--sobre-acento);
+  background: var(--acento);
+  border-color: var(--acento);
+}
+
+button[type='submit']:hover:not(:disabled),
+button.principal:hover:not(:disabled) {
+  background: var(--acento-hover);
+  border-color: var(--acento-hover);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* botones dentro de tablas: mas compactos */
+td button,
+th button {
+  min-height: 32px;
+  padding: 0 var(--e3);
+  font-size: 0.875rem;
+}
+
+td button + button {
+  margin-left: var(--e1);
+}
+
+/* formularios */
+
+label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+input:not([type='checkbox']):not([type='radio']),
+select,
+textarea {
+  min-height: var(--alto-control);
+  padding: var(--e2) var(--e3);
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--texto);
+  background: var(--fondo);
+  border: 1px solid var(--borde-fuerte);
+  border-radius: var(--radio);
+}
+
+textarea {
+  display: block;
+  resize: vertical;
+}
+
+input:not([type='checkbox']):not([type='radio']):focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--acento);
+  box-shadow: var(--anillo);
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  color: var(--texto-suave);
+  background: var(--superficie);
+  cursor: not-allowed;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--acento);
+  vertical-align: middle;
+}
+
+/* formularios apilados: etiqueta arriba, campo debajo */
+form > div {
+  margin-bottom: var(--e4);
+}
+
+form > div > label {
+  display: block;
+  margin-bottom: var(--e1);
+}
+
+form > div > input:not([type='checkbox']):not([type='radio']),
+form > div > select,
+form > div > textarea {
+  width: 100%;
+  max-width: 420px;
+}
+
+form small {
+  display: block;
+  margin-top: var(--e1);
+}
+
+fieldset {
+  margin: 0 0 var(--e4);
+  padding: var(--e3) var(--e4);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+legend {
+  padding: 0 var(--e2);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* formularios dentro de una fila de tabla (editar, decidir, agregar...) */
+td > form,
+td > div {
+  padding: var(--e3) 0;
+}
+
+/* tablas */
+
+table {
+  width: 100%;
+  margin: var(--e3) 0 var(--e4);
+  font-size: 0.9375rem;
+  border: 1px solid var(--borde);
+  border-spacing: 0;
+  border-radius: var(--radio);
+}
+
+th {
+  padding: var(--e2) var(--e3);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  background: var(--superficie);
+  border-bottom: 1px solid var(--borde);
+}
+
+td {
+  padding: var(--e2) var(--e3);
+  vertical-align: middle;
+  border-bottom: 1px solid var(--borde);
+}
+
+thead tr:first-child th:first-child {
+  border-top-left-radius: calc(var(--radio) - 1px);
+}
+
+thead tr:first-child th:last-child {
+  border-top-right-radius: calc(var(--radio) - 1px);
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:hover {
+  background: var(--superficie);
+}
+
+tfoot td {
+  font-weight: 600;
+  background: var(--superficie);
+  border-top: 1px solid var(--borde);
+  border-bottom: 0;
+}
+
+/* tabla dentro de una fila desplegada */
+td table {
+  margin: var(--e2) 0;
+  background: var(--fondo);
+}
+
+/* las tablas anchas se desplazan en pantallas pequenas */
+@media (max-width: 900px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* selectores dentro de la parrilla de turnos */
+td select {
+  min-width: 7.5rem;
+  max-width: 100%;
+}
+
+/* mensajes */
+
+[role='alert'],
+[role='status'] {
+  max-width: 75ch;
+  margin: var(--e3) 0;
+  padding: var(--e2) var(--e3);
+  font-size: 0.9375rem;
+  border-left: 4px solid;
+  border-radius: var(--radio);
+}
+
+[role='alert'] {
+  color: var(--peligro);
+  background: var(--peligro-suave);
+  border-color: var(--peligro);
+}
+
+[role='status'] {
+  color: var(--exito);
+  background: var(--exito-suave);
+  border-color: var(--exito);
+}
+
+/* errores de un campo: discretos, justo debajo del campo */
+form > div > [role='alert'] {
+  margin: var(--e1) 0 0;
+  padding: 0;
+  font-size: 0.8125rem;
+  background: none;
+  border: 0;
+}
+
+/* detalles desplegables */
+
+details summary {
+  color: var(--acento);
+  cursor: pointer;
+}
+
+details[open] summary {
+  margin-bottom: var(--e1);
+}
+
+/* detalle de la bitacora: etiqueta y valor en lista */
+details dl {
+  display: grid;
+  gap: var(--e1);
+  margin: 0;
+  min-width: 16rem;
+}
+
+details dl > div {
+  display: flex;
+  gap: var(--e3);
+  justify-content: space-between;
+}
+
+details dt {
+  color: var(--texto-suave);
+}
+
+details dd {
+  margin: 0;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* listas de verificacion */
+
+main section > ul {
+  list-style: none;
+  padding: 0;
+}
+
+main section > ul > li {
+  padding: var(--e2) var(--e3);
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+/* ventanas emergentes */
+
+dialog.ventana {
+  width: min(560px, calc(100vw - 2 * var(--e4)));
+  max-height: calc(100svh - 2 * var(--e5));
+  padding: 0;
+  color: var(--texto);
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-grande);
+  box-shadow: var(--sombra);
+}
+
+dialog.ventana::backdrop {
+  background: rgb(0 0 0 / 0.55);
+}
+
+.ventana-contenido {
+  position: relative;
+  padding: var(--e5);
+}
+
+/* el titulo de cada formulario deja espacio a la x */
+.ventana-contenido :is(h2, h3):first-of-type {
+  margin-top: 0;
+  padding-right: var(--e6);
+}
+
+.ventana-cerrar {
+  position: absolute;
+  top: var(--e3);
+  right: var(--e3);
+  width: 32px;
+  min-height: 32px;
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  border-color: transparent;
+}
+
+.encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e3);
+}
+
+.encabezado h1 {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .ventana-contenido {
+    padding: var(--e4);
+  }
+}

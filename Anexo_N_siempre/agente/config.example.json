@@ -1,0 +1,17 @@
+{
+  "lector_serie": "SERIE-DEL-RELOJ",
+  "device": {
+    "ip": "192.168.1.132",
+    "port": 4370,
+    "password": 0,
+    "timeout": 15
+  },
+  "api": {
+    "url": "https://TU-FLASK.onrender.com/api/marcaciones",
+    "api_key": "pega-aqui-la-clave-que-te-dio-generar_api_key.py"
+  },
+  "ignorar_antes_de": "2026-10-05T00:00:00-06:00",
+  "utc_offset_horas": -6,
+  "poll_interval_seconds": 300,
+  "queue_db": "queue.sqlite3"
+}

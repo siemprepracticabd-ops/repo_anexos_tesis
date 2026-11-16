@@ -1,0 +1,136 @@
+/* estructura de la pagina: barra de navegacion, contenido y secciones */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: var(--e1);
+  padding: var(--e2) var(--e5);
+  overflow-x: auto;
+  background: var(--fondo);
+  border-bottom: 1px solid var(--borde);
+}
+
+nav::before {
+  content: 'Siempre';
+  margin-right: var(--e4);
+  font-weight: 700;
+  color: var(--acento);
+}
+
+nav a {
+  padding: var(--e2) var(--e3);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--texto-suave);
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: var(--radio);
+}
+
+nav a:hover {
+  color: var(--texto);
+  background: var(--superficie);
+}
+
+nav a.active {
+  color: var(--acento);
+  background: var(--acento-suave);
+}
+
+main {
+  max-width: var(--ancho-pagina);
+  margin: 0 auto;
+  padding: var(--e5) var(--e5) var(--e7);
+}
+
+section {
+  margin-top: var(--e6);
+}
+
+main > section:first-of-type {
+  margin-top: var(--e5);
+}
+
+/* filtros y selectores sueltos en la parte de arriba de cada pantalla */
+main > label {
+  margin-right: var(--e1);
+}
+
+main > select,
+main > input,
+main > button {
+  margin-right: var(--e3);
+}
+
+/* alertas y salir, siempre en la esquina superior derecha */
+.nav-usuario {
+  display: flex;
+  align-items: center;
+  gap: var(--e2);
+  margin-left: auto;
+  padding-left: var(--e4);
+}
+
+.nav-usuario button {
+  min-height: 32px;
+  font-size: 0.875rem;
+}
+
+.nav-contador {
+  display: inline-block;
+  min-width: 1.25rem;
+  margin-left: var(--e1);
+  padding: 0 var(--e1);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  text-align: center;
+  color: var(--sobre-acento);
+  background: var(--peligro);
+  border-radius: 999px;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e2) var(--e3);
+  margin: var(--e4) 0;
+  padding: var(--e3) var(--e4);
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-grande);
+}
+
+.filtros label {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  nav {
+    padding: var(--e2) var(--e3);
+  }
+
+  main {
+    padding: var(--e4) var(--e4) var(--e6);
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media print {
+  nav,
+  button {
+    display: none !important;
+  }
+
+  main {
+    max-width: none;
+    padding: 0;
+  }
+}

@@ -1,0 +1,122 @@
+/* base: reinicio, tipografia y elementos de texto */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--texto);
+  background: var(--fondo);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--texto);
+}
+
+h1 {
+  margin-bottom: var(--e2);
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  margin-bottom: var(--e2);
+  font-size: 1.25rem;
+}
+
+h3 {
+  margin: var(--e5) 0 var(--e2);
+  font-size: 1rem;
+}
+
+p {
+  max-width: 75ch;
+  margin: 0 0 var(--e3);
+}
+
+small {
+  color: var(--texto-suave);
+}
+
+a {
+  color: var(--acento);
+}
+
+a:hover {
+  color: var(--acento-hover);
+}
+
+ul,
+ol {
+  margin: 0 0 var(--e3);
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: var(--e1);
+}
+
+hr {
+  margin: var(--e5) 0;
+  border: 0;
+  border-top: 1px solid var(--borde);
+}
+
+code,
+pre {
+  font-family: var(--fuente-codigo);
+  font-size: 0.8125rem;
+}
+
+pre {
+  max-width: 480px;
+  margin: var(--e2) 0 0;
+  padding: var(--e3);
+  overflow: auto;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--acento-suave);
+}
+
+:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

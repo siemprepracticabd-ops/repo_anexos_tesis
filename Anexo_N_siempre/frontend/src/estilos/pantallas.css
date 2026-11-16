@@ -1,0 +1,346 @@
+/* detalles propios de cada pantalla */
+
+/* inicio de sesion */
+
+main.login {
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  max-width: none;
+  padding: var(--e5);
+}
+
+.login-tarjeta {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--e6);
+  text-align: center;
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-grande);
+  box-shadow: var(--sombra);
+}
+
+.login-logo {
+  display: block;
+  height: 56px;
+  margin: 0 auto var(--e4);
+}
+
+.login-tarjeta h1 {
+  margin: 0 0 var(--e1);
+  font-size: 1.375rem;
+}
+
+.login-subtitulo {
+  margin: 0 auto var(--e5);
+  color: var(--texto-suave);
+}
+
+.login-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e1);
+  text-align: left;
+}
+
+.login-formulario label {
+  margin-top: var(--e3);
+}
+
+.login-formulario input {
+  width: 100%;
+}
+
+.login-formulario button {
+  margin-top: var(--e5);
+  min-height: 44px;
+}
+
+.login-error {
+  margin: var(--e3) 0 0;
+  text-align: center;
+}
+
+/* inicio: tablero */
+
+.bienvenida h1 {
+  margin-bottom: var(--e1);
+}
+
+.bienvenida p {
+  margin: 0;
+  color: var(--texto-suave);
+}
+
+.datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: var(--e3);
+}
+
+.dato {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e1);
+  padding: var(--e4);
+  color: var(--texto);
+  text-decoration: none;
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-top: 4px solid var(--borde-fuerte);
+  border-radius: var(--radio-grande);
+  box-shadow: var(--sombra);
+}
+
+a.dato {
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+a.dato:hover {
+  transform: translateY(-2px);
+}
+
+.dato-numero {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.dato-etiqueta {
+  font-size: 0.875rem;
+  color: var(--texto-suave);
+}
+
+.dato.bien {
+  border-top-color: var(--exito);
+}
+
+.dato.bien .dato-numero {
+  color: var(--exito);
+}
+
+.dato.aviso {
+  background: var(--aviso-suave);
+  border-top-color: var(--aviso);
+}
+
+.dato.aviso .dato-numero {
+  color: var(--aviso);
+}
+
+.dato.mal {
+  background: var(--peligro-suave);
+  border-top-color: var(--peligro);
+}
+
+.dato.mal .dato-numero {
+  color: var(--peligro);
+}
+
+.vacio {
+  padding: var(--e4);
+  color: var(--exito);
+  background: var(--exito-suave);
+  border-radius: var(--radio);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e2);
+  margin-bottom: var(--e4);
+}
+
+.chip {
+  min-height: 32px;
+  padding: 0 var(--e3);
+  font-size: 0.875rem;
+  border-radius: 999px;
+}
+
+.chip span {
+  display: inline-block;
+  min-width: 1.25rem;
+  margin-left: var(--e1);
+  padding: 0 var(--e1);
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--texto-suave);
+  background: var(--superficie);
+  border-radius: 999px;
+}
+
+.chip[aria-pressed='true'] {
+  color: var(--sobre-acento);
+  background: var(--acento);
+  border-color: var(--acento);
+}
+
+.chip[aria-pressed='true'] span {
+  color: var(--acento);
+  background: var(--sobre-acento);
+}
+
+.alertas {
+  display: grid;
+  gap: var(--e2);
+}
+
+.alerta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e3);
+  padding: var(--e3) var(--e4);
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-left: 5px solid var(--borde-fuerte);
+  border-radius: var(--radio);
+}
+
+.alerta.alta {
+  background: var(--peligro-suave);
+  border-left-color: var(--peligro);
+}
+
+.alerta.media {
+  background: var(--aviso-suave);
+  border-left-color: var(--aviso);
+}
+
+.alerta.baja {
+  border-left-color: var(--acento);
+}
+
+.alerta-cuerpo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e1) var(--e3);
+  min-width: 0;
+}
+
+.alerta-texto {
+  color: var(--texto-suave);
+}
+
+.insignia {
+  padding: 2px var(--e2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--sobre-acento);
+  background: var(--acento);
+  border-radius: 999px;
+}
+
+.alerta.alta .insignia {
+  background: var(--peligro);
+}
+
+.alerta.media .insignia {
+  background: var(--aviso);
+}
+
+.relojes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--e3);
+}
+
+.reloj {
+  display: flex;
+  align-items: center;
+  gap: var(--e3);
+  padding: var(--e4);
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-grande);
+  box-shadow: var(--sombra);
+}
+
+.reloj small,
+.reloj-estado small {
+  display: block;
+  color: var(--texto-suave);
+}
+
+.reloj-estado {
+  margin-left: auto;
+  text-align: right;
+}
+
+.punto {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  background: var(--borde-fuerte);
+  border-radius: 50%;
+}
+
+.punto.bien {
+  background: var(--exito);
+  box-shadow: 0 0 0 4px var(--exito-suave);
+}
+
+.punto.aviso {
+  background: var(--aviso);
+  box-shadow: 0 0 0 4px var(--aviso-suave);
+}
+
+.punto.mal {
+  background: var(--peligro);
+  box-shadow: 0 0 0 4px var(--peligro-suave);
+}
+
+.chip[aria-pressed='true']:hover:not(:disabled) {
+  color: var(--sobre-acento);
+  background: var(--acento-hover);
+  border-color: var(--acento-hover);
+}
+
+.datos-dos {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
+  margin-bottom: var(--e2);
+}
+
+p.vacio {
+  max-width: none;
+}
+
+/* inicio: quien esta activo por sucursal */
+.en-turno {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 320px));
+  gap: var(--e3);
+}
+
+.en-turno-caja {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--e1) var(--e3);
+  padding: var(--e3) var(--e4);
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-left: 4px solid var(--borde-fuerte);
+  border-radius: var(--radio);
+}
+
+.en-turno-caja.con-gente {
+  background: var(--exito-suave);
+  border-left-color: var(--exito);
+}
+
+.en-turno-caja small {
+  grid-column: 1 / -1;
+}
+
+.en-turno-cuenta {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.en-turno-caja.con-gente .en-turno-cuenta {
+  color: var(--exito);
+}

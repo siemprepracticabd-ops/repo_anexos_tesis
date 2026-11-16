@@ -1,0 +1,32 @@
+# secretos y variables de entorno
+.env
+.env.*
+!.env.example
+
+# python
+backend/venv/
+**/__pycache__/
+*.pyc
+
+# node
+frontend/node_modules/
+frontend/dist/
+
+# firebase
+.firebase/
+firebase-debug.log
+
+# agente de sucursal: ejecutable, configuracion real, cola y registro
+agente/config.json
+agente/*.sqlite3
+agente/*.log
+*.exe
+*.zip
+
+# respaldos de la base (traen datos personales)
+database/respaldo/
+
+# editor y sistema
+.vscode/
+.DS_Store
+Thumbs.db

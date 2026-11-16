@@ -1,0 +1,7 @@
+/* punto de entrada de todos los estilos del sistema */
+
+@import './variables.css';
+@import './base.css';
+@import './estructura.css';
+@import './componentes.css';
+@import './pantallas.css';
